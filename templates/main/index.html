@@ -1,0 +1,20 @@
+ {% extends 'base.html'%}
+ <html lang="en">
+ <head>
+ <title>SPORTS</title>
+ </head>
+ <body>
+    <h1>Football</h1>
+    <div>
+    {% block content%}
+    </div>
+    {% for title in titles %}
+    {% if title.image %}
+    <img src="{{title.image.url}}" alt=" ">
+    {% endif %}
+    <a href="{% url 'message' %}"><h3>{{title.caption}}</h3></a>
+    {% endfor %}
+    </div>
+    {% endblock content %}
+    </body>
+    </html>
